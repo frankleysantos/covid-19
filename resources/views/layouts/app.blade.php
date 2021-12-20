@@ -21,14 +21,14 @@
 </head>
 <body>
     <div id="app">
-        
+        @if(Auth::user())
         <header-component 
             :username="{{Auth::user() ? Auth::user() : ''}}"
             url_paciente="{{url('paciente')}}"
             url_vacina="{{url('vacina')}}"
             url_logout="{{url('logout')}}"
         ></header-component>
-
+        @endif
           <div class="container">
             <main class="py-4">
                 @yield('content')
